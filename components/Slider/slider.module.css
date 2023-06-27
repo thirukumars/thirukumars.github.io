@@ -1,0 +1,116 @@
+.gallery_container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+.gallery_item {
+    /* height: 00px; */
+    /* opacity: 0; */
+    position: absolute;
+    top:300;
+
+    transition: all 0.5s ease-in-out;
+    width: 650px;
+    height: 500px;
+    z-index: 0;
+    background-size: contain;
+}
+
+.fade_current {
+    opacity: 0;
+}
+.gallery_item_1 {
+    /* transform: translateX(-50%); */
+    /* opacity: 0; */
+    z-index: 1;
+}
+.gallery_item_2 {
+    transform: translateX(55%);
+    position: absolute;
+    width: 480px;
+    height: 500px;
+    top: 50px;
+    opacity: 0.5;
+}
+
+.gallery_controls {
+    display:flex;
+    justify-content: center;
+    margin: 25px 0;
+    height: 100px;
+}
+.gallery_controls button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 30px;
+    margin: 0 50px;
+    padding: 0 12px;
+    text-transform: capitalize;
+}
+
+.gallery_controls_button:focus {
+    outline: none
+}
+
+.gallery_controls_previous {
+    position: relative;
+}
+
+.gallery_controls_previous::before {
+    border: solid #000;
+    border-width:  0 5px 5px 0;
+    content: "";
+    display: inline-block;
+    height: 5px;
+    left: -30px;
+    padding: 10px;
+    position: absolute;
+    top: 45%;
+    transform: rotate(135deg) translateY(50%);
+    transition: left 0.15s ease-in-out;
+    width: 5px;
+}
+
+.gallery_controls_previous:hover::before {
+    left: -40px;
+}
+
+
+
+.gallery_controls_next {
+    position: relative;
+}
+
+.gallery_controls_next::before {
+    border: solid #000;
+    border-width:  0 5px 5px 0;
+    content: "";
+    display: inline-block;
+    height: 5px;
+    right: -30px;
+    padding: 10px;
+    position: absolute;
+    top: 45;
+    transform: rotate(-45deg) translateY(-50%);
+    transition: right 0.15s ease-in-out;
+    width: 5px;
+}
+
+.gallery_controls_next:hover::before {
+    right: -40px;
+}
+
+
+.gallery_nav {
+    bottom: -15px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+}
+

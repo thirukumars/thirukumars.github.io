@@ -1,0 +1,25 @@
+.col_background {
+    background-image: url('/blueBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.col_background_2 {
+    
+    background-image: url('/redBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.col_background_3 {
+    
+    background-image: url('/goldBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.service_img {
+    height: 500px;
+    width: 90%;
+}
