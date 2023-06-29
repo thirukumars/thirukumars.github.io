@@ -1,40 +1,12 @@
-import { useEffect, useState } from "react";
 import styles from "./navbar.module.css";
 function Navbar(props) {
   const { activeSection } = props;
-  console.log(activeSection, "activeSection");
-  const [clientWindowHeight, setClientWindowHeight] = useState("");
 
-  const [backgroundTransparacy, setBackgroundTransparacy] = useState(0);
-  const [padding, setPadding] = useState(10);
-  const [boxShadow, setBoxShadow] = useState(0);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
-
-  const handleScroll = () => {
-    setClientWindowHeight(window.scrollY);
-  };
-
-  useEffect(() => {
-    let backgroundTransparacyVar = clientWindowHeight / 100;
-
-    if (backgroundTransparacyVar < 1) {
-      let paddingVar = 2 - backgroundTransparacyVar * 0.5;
-      let boxShadowVar = backgroundTransparacyVar * 0.1;
-      setBackgroundTransparacy(backgroundTransparacyVar);
-      setPadding(paddingVar);
-      setBoxShadow(boxShadowVar);
-    }
-  }, [clientWindowHeight]);
   return (
     <div
       className={`fixed-top`}
       style={{
-        background: `rgba(255, 255, 255, ${backgroundTransparacy})`,
-        boxShadow: `rgb(0 0 0 / ${boxShadow}) 0px 0px 20px 6px`,
+        background: `rgba(255, 255, 255, 0.9)`,
       }}
     >
       <nav className={`container `}>
@@ -43,7 +15,7 @@ function Navbar(props) {
             <img src="/logo.png" className={`img-fluid logo_icon`} />
           </div>
           <div
-            className={`col-md-9 d-flex justify-content-end align-items-center ${styles.nav_container}`}
+            className={`col-md-9 d-none d-md-flex justify-content-end align-items-center ${styles.nav_container}`}
           >
             <ul className="d-flex justify-content-evenly">
               <li

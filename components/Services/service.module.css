@@ -23,3 +23,24 @@
     height: 500px;
     width: 90%;
 }
+
+/* Scroll animation */
+
+
+.scroll_content {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  .appear_from_left {
+    transform: translateX(-100%);
+  }
+  
+  .appear_from_left {
+    transform: translateX(100%);
+  }
+  
+  .scroll_content.appear {
+    opacity: 1;
+    transform: translateX(0);
+  }

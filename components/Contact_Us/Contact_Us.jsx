@@ -62,6 +62,9 @@ function ContactUs(props) {
             #fabd00 100%
           );
         }
+        button:hover {
+          transform: translateY(5%);
+        }
         .mapIcon {
           fill: url(#gradient);
         }

@@ -1,43 +1,52 @@
+import { useCallback, useEffect, useRef, useState } from "react";
 import Slider from "../Slider/Slider";
 
 import styles from "./banner.module.css";
 
-import { useEffect, useState } from "react";
-
 function Banner(props) {
-  const { activeSection } = props;
   const [current, setCurrent] = useState(0);
   const [next, setNext] = useState(1);
+  const [isAutoSliding, setIsAutoSliding] = useState(true);
 
-  // // Function to advance to the next slide
-  // const nextSlider = () => {
-  //   setCurrent((prevSlide) =>
-  //     prevSlide <= 3 ? setCurrent(prevSlide + 1) : setCurrent(0)
-  //   );
-  //   setNext((nextImg) => (nextImg < 4 ? setNext(nextImg + 1) : setNext(0)));
-  // };
+  const handleSlide = useCallback(() => {
+    setCurrent((prev) => (prev <= 3 ? prev + 1 : 0));
+    setNext((next) => (next < 4 ? next + 1 : 0));
+  }, []);
+  useEffect(() => {
+    // Set interval to automatically advance to the next slide every 3 seconds
+    const interval = setInterval(() => {
+      if (isAutoSliding) {
+        handleSlide();
+      }
+    }, 3000);
 
-  // useEffect(() => {
-  //   // Set interval to automatically advance to the next slide every 3 seconds
-  //   const interval = setInterval(nextSlider, 3000);
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, [isAutoSliding]);
 
-  //   // Clean up the interval when the component unmounts
-  //   return () => clearInterval(interval);
-  // }, []);
+  const handleControlClick = () => {
+    setIsAutoSliding(false);
 
+    // Restore auto-sliding after 5 seconds (adjust the duration as needed)
+    setTimeout(() => {
+      setIsAutoSliding(true);
+    }, 10000);
+  };
   const prev = () => {
     current > 0 ? setCurrent(current - 1) : setCurrent(4);
     next >= 1 ? setNext(next - 1) : setNext(4);
+    handleControlClick();
   };
   const nextSlide = () => {
     current <= 3 ? setCurrent(current + 1) : setCurrent(0);
     next < 4 ? setNext(next + 1) : setNext(0);
+    handleControlClick();
   };
 
   return (
-    <div className="container" id="home">
-      <div className="row h-100 justify-content-between align-items-center text-left">
-        <div className="col-md-4 col-sm-12">
+    <section className="container" id="home">
+      <div className="row  justify-content-between align-items-center text-left">
+        <div className="col-md-4">
           <h1>DISRUPTIVE INNOVATION</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea
@@ -46,28 +55,28 @@ function Banner(props) {
             officia velit quod nobis.
           </p>
         </div>
-        <div className="col-md-8 col-sm-12">
+        <div className="col-md-8">
           <Slider current={current} next={next} />
         </div>
       </div>
       <div className="row  justify-content-between align-items-center mt-5">
-        <div className="col-md-4">
-          <span className="mx-4">
+        <div className="col-xs-12 col-md-4 d-flex justify-content-around">
+          <span className={` ${styles.icon_container}`}>
             <img src="/fb.png" className={`img-fluid ${styles.social_icon}`} />
           </span>
-          <span className="mx-4">
+          <span className={` ${styles.icon_container}`}>
             <img
               src="/insta.png"
               className={`img-fluid  ${styles.social_icon}`}
             />
           </span>
-          <span className="mx-4">
+          <span className={` ${styles.icon_container}`}>
             <img
               src="/linkedin.png"
               className={`img-fluid  ${styles.social_icon}`}
             />
           </span>
-          <span className="mx-4">
+          <span className={` ${styles.icon_container}`}>
             <img
               src="/tweet.png"
               className={`img-fluid  ${styles.social_icon}`}
@@ -89,7 +98,7 @@ function Banner(props) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

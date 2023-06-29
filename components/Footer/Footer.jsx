@@ -7,7 +7,7 @@ function Footer(props) {
       <footer>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-4 d-flex flex-column justify-content-between">
+            <div className="col-md-4 d-flex flex-column justify-content-between text-center text-md-start">
               <div>
                 <img src="/logo.png" className={`img-fluid logo_icon`} />
               </div>
@@ -16,7 +16,7 @@ function Footer(props) {
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
               </div>
             </div>
-            <div className="col-md-8 wrapper d-flex justify-content-around text-start">
+            <div className="col-md-8 wrapper d-flex flex-column flex-md-row justify-content-around text-center text-md-start">
               <div className="d-flex flex-column justify-content-evenly">
                 <h2>Lorem Ipsum</h2>
                 <p>lorem ipsum</p>
@@ -31,20 +31,20 @@ function Footer(props) {
                 <p>lorem ipsum</p>
                 <p>lorem ipsum</p>
               </div>
-              <div className="d-flex flex-column  justify-content-evenly">
-                <span className="mx-4">
+              <div className="d-flex flex-row flex-md-column  justify-content-between align-items-center">
+                <span className="">
                   <img src="/fb.png" className={`img-fluid social_icon`} />
                 </span>
-                <span className="mx-4">
+                <span className="">
                   <img src="/insta.png" className={`img-fluid social_icon`} />
                 </span>
-                <span className="mx-4">
+                <span className="">
                   <img
                     src="/linkedin.png"
                     className={`img-fluid social_icon`}
                   />
                 </span>
-                <span className="mx-4">
+                <span className="">
                   <img src="/tweet.png" className={`img-fluid social_icon`} />
                 </span>
               </div>
@@ -68,14 +68,20 @@ function Footer(props) {
           .social_icon {
             width: 40px;
             height: 40px;
+            cursor: pointer;
+          }
+          span {
+            cursor: pointer;
           }
         `}</style>
       </footer>
       <div className="bg-dark">
         <div className="container-fluid text-light p-4">
           <div className="row  px-5">
-            <div className="col-8">&#169; 2023 BEYOX. All Rights Reserved.</div>
-            <div className="col-4 d-flex justify-content-around">
+            <div className="col-md-8 my-3 ">
+              &#169; 2023 BEYOX. All Rights Reserved.
+            </div>
+            <div className="col-md-4 d-flex justify-content-between justify-content-md-around align-items-center">
               <span>Terms of use</span>
               <span>Privacy policy</span>
             </div>

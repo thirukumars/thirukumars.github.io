@@ -14,15 +14,8 @@ export default function Home() {
       const bannerSection = document.getElementById("home");
       const contactSection = document.getElementById("contact_us");
       const serviceSection = document.getElementById("services");
-      console.log(
-        bannerSection.offsetTop,
-        serviceSection.offsetTop,
-        contactSection.offsetTop,
-        "section"
-      );
 
       const scrollPosition = window.scrollY;
-      console.log(scrollPosition, "scrollPostition");
       if (bannerSection && contactSection && serviceSection) {
         if (
           scrollPosition >= bannerSection.offsetTop &&

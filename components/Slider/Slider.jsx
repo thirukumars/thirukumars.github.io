@@ -2,7 +2,6 @@ import styles from "./slider.module.css";
 
 function Slider(props) {
   const { current, next } = props;
-  console.log(current, next);
   return (
     <div className="gallery">
       <div className={`${styles.gallery_container}`}>

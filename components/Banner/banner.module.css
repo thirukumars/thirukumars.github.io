@@ -3,16 +3,25 @@
 
 /* social media icons */
 
+.icon_container {
+cursor: pointer;
+}
+
 .social_icon {
     width: 40px;
     height: 40px;
+    transition: opacity  0.2s;
 }
+
+.social_icon:hover {
+    opacity: 0.6;
+}
+
 
 
 
 /* slider controller */
 .box {
-
     background-color: rgba(126, 114, 91,0.1);
     position: absolute;
     right: 0;
@@ -51,7 +60,7 @@
     content: "";
     display: inline-block;
     height: 3px;
-    left: -30px;
+    left: 0px;
     padding: 5px;
     position: absolute;
     top: 45%;
@@ -61,7 +70,7 @@
 }
 
 .gallery_controls_previous:hover::before {
-    left: -40px;
+    /* left: -40px; */
 }
 
 
@@ -76,7 +85,7 @@
     content: "";
     display: inline-block;
     height: 5px;
-    right: -30px;
+    right: 0px;
     padding: 5px;
     position: absolute;
     top: 45;
@@ -86,7 +95,7 @@
 }
 
 .gallery_controls_next:hover::before {
-    right: -40px;
+    /* right: -40px; */
 }
 
 

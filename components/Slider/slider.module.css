@@ -11,28 +11,37 @@
     position: absolute;
     top:300;
 
-    transition: all 0.5s ease-in-out;
-    width: 650px;
-    height: 500px;
+    transition: all 0.5s ease-in;
+    width: 100%;
+    height: 100%;
     z-index: 0;
     background-size: contain;
+    overflow: hidden;
 }
 
 .fade_current {
     opacity: 0;
 }
 .gallery_item_1 {
-    /* transform: translateX(-50%); */
-    /* opacity: 0; */
-    z-index: 1;
+    
+  opacity: 1;
+  z-index: 1;
+    transition: all 0.5s cubic-bezier(1,.23,0,.76);
 }
 .gallery_item_2 {
-    transform: translateX(55%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    transform: translate(10%,10%);
+    /* transform: translateX(55%);
     position: absolute;
     width: 480px;
     height: 500px;
     top: 50px;
-    opacity: 0.5;
+    opacity: 0.5; */
 }
 
 .gallery_controls {

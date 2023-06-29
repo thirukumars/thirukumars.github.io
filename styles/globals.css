@@ -27,3 +27,14 @@ p,
 ul {
   margin: 0;
 }
+
+
+/* Scroll Animation */
+body {
+scroll-snap-type: y mandatory;
+overflow-y: scroll;
+}
+
+section {
+  scroll-snap-align: end;
+}
