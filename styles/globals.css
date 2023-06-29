@@ -2,10 +2,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins',sans-serif;
 }
 h1, h2 {
-  font-family:poppins 500;
+  font-family:Poppins 200;
 }
 a {
   color: inherit;
@@ -26,14 +26,4 @@ h2,
 p,
 ul {
   margin: 0;
-}
-
-ul {
-  padding: 0;
-  list-style: none;
-}
-
-button {
-  padding: 0.5rem 1rem;
-  font-weight: bold;
 }

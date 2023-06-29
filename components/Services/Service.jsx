@@ -1,7 +1,7 @@
 import styles from "./service.module.css";
 function Service(props) {
   return (
-    <section className={`container mt-5`}>
+    <section className={`container mt-5`} id="services">
       <h1 className="header  text-center">Services</h1>
       <div className="row">
         <div
@@ -13,7 +13,7 @@ function Service(props) {
             className={`img-fluid ${styles.service_img}`}
           />
         </div>
-        <div className="col-md-6 d-flex flex-column justify-content-center align-items-start px-5">
+        <div className="col-md-6 d-flex flex-column justify-content-around align-items-start px-5">
           <h1>Web Development</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
@@ -34,7 +34,7 @@ function Service(props) {
         </div>
       </div>
       <div className="row">
-        <div className="col-md-6 d-flex flex-column justify-content-center align-items-end text-end px-5 ">
+        <div className="col-md-6 d-flex flex-column justify-content-around align-items-end text-end px-5 ">
           <h1>Mobile Development</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
@@ -73,7 +73,7 @@ function Service(props) {
             className={`img-fluid ${styles.service_img}`}
           />
         </div>
-        <div className="col-md-6 d-flex flex-column justify-content-center align-items-start px-5">
+        <div className="col-md-6 d-flex flex-column justify-content-around align-items-start px-5">
           <h1>Blockchain Development</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
@@ -94,7 +94,7 @@ function Service(props) {
         </div>
       </div>
       <div className="row">
-        <div className="col-md-6 d-flex flex-column justify-content-center align-items-end text-end px-5 ">
+        <div className="col-md-6 d-flex flex-column justify-content-around align-items-end text-end px-5 ">
           <h1>Branding Consultancy</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis

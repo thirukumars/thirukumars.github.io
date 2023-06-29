@@ -114,3 +114,17 @@
     width: 100%;
 }
 
+
+
+@media(max-width: 520px) {
+    .gallery_item_1 {
+        /* transform: translateX(-50%); */
+        /* opacity: 0; */
+        z-index: 1;
+    }
+    .gallery_item_2 {
+        transform: translateX(0%);
+        position: absolute;
+        top: 0;
+    }
+}

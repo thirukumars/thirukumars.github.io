@@ -4,7 +4,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { GrMail } from "react-icons/gr";
 function ContactUs(props) {
   return (
-    <section className={`container mt-5 px-5`}>
+    <section className={`container mt-5 px-5`} id="contact_us">
       <h1 className="header  text-center">Contact Us</h1>
       <div className="row mt-5">
         <div className="col-md-6 mt-5">

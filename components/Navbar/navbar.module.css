@@ -1,0 +1,20 @@
+
+.active {
+font-weight: bold;
+}
+.navbar {
+}
+.nav_item {
+    cursor: pointer;
+    min-width: 120px;
+}
+
+.nav_item:hover {
+    font-weight: bold;
+}
+
+nav ul li.active {
+    /* Apply your active item styles here */
+    font-weight: bold;
+    /* Add more styles as needed */
+  }
