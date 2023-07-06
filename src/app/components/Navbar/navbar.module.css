@@ -2,9 +2,10 @@
 .active {
 font-weight: bold;
 }
-.navbar {
+.logo_icon {
+  /* height: 30px; */
+  width: 70%;
 }
-
 
 .nav_item:hover {
     font-weight: bold;
@@ -18,7 +19,7 @@ nav ul li.active {
 
   
   .nav_container {
-    padding: 20px;
+    padding: 15px;
   }
 .navbar  {
     list-style: none;
@@ -30,4 +31,12 @@ nav ul li.active {
     display: flex;
     justify-content: center;
     padding-left: 2rem;
+  }
+
+
+
+  @media (max-width: 520px) {
+    .nav_container {
+      display: none;
+    }
   }

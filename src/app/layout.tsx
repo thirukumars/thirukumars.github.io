@@ -1,9 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import { useState, useEffect } from "react";
+import Layout from "./components/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,40 +15,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [activeSection, setActiveSection] = useState("");
-  useEffect(() => {
-    const handleScroll = () => {
-      const bannerSection = document.getElementById("home");
-      const contactSection = document.getElementById("contact_us");
-      const serviceSection = document.getElementById("services");
-
-      const scrollPosition = window.scrollY;
-      if (bannerSection && contactSection && serviceSection) {
-        if (
-          scrollPosition >= bannerSection.offsetTop &&
-          scrollPosition < serviceSection.offsetTop - 200
-        ) {
-          setActiveSection("home");
-        } else if (
-          scrollPosition >= serviceSection.offsetTop - 200 &&
-          scrollPosition < contactSection.offsetTop - 200
-        ) {
-          setActiveSection("services");
-        } else if (scrollPosition >= contactSection.offsetTop - 200) {
-          setActiveSection("contact_us");
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
-        <Navbar activeSection={activeSection} />
-        {children}
-        <Footer />
+      <body className={inter.className}>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );

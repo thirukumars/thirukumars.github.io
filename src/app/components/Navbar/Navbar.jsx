@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./navbar.module.css";
 function Navbar(props) {
   const { activeSection } = props;
-
+  console.log(activeSection, "activation props");
   return (
     <div
       className={`fixed-top`}
@@ -11,10 +11,10 @@ function Navbar(props) {
         background: `rgba(255, 255, 255, 0.9)`,
       }}
     >
-      <nav className={`container `}>
+      <nav className={`container ${styles.nav_container}`}>
         <div className="row justify-content-between align-items-center">
           <div className="col-md-3">
-            <img src="/logo.png" className={`img-fluid logo_icon`} />
+            <img src="/logo.png" className={`img-fluid ${styles.logo_icon}`} />
           </div>
           <div
             className={`col-md-9 d-none d-md-flex justify-content-end align-items-center ${styles.nav_container}`}
@@ -25,25 +25,40 @@ function Navbar(props) {
                   activeSection === "home" ? styles.active : ""
                 }`}
               >
-                Home
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  href="/"
+                >
+                  Home
+                </Link>
               </li>
               <li
                 className={`${styles.nav_item}  ${
                   activeSection === "services" ? styles.active : ""
                 }`}
               >
-                Services
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  href="/"
+                >
+                  Services
+                </Link>
               </li>
               <li
                 className={`${styles.nav_item}  ${
                   activeSection === "contact_us" ? styles.active : ""
                 }`}
               >
-                Contact
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  href="/"
+                >
+                  Contact
+                </Link>
               </li>
               <li
                 className={`${styles.nav_item}  ${
-                  activeSection === "projects" ? styles.active : ""
+                  activeSection === "about_us" ? styles.active : ""
                 }`}
               >
                 <Link
@@ -58,19 +73,18 @@ function Navbar(props) {
                   activeSection === "carrers" ? styles.active : ""
                 }`}
               >
-                Careers
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  href="/careers"
+                >
+                  Careers
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
         <style jsx>{`
-          .logo_icon {
-            height: 50px;
-          }
-          .nav_container {
-            display: flex;
-          }
           @media (max-width: 520px) {
             .nav_container {
               display: none;
