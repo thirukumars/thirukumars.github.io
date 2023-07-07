@@ -1,9 +1,14 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./navbar.module.css";
 function Navbar(props) {
+  {
+    /* Get the current route */
+  }
+  const currentRoute = usePathname();
   const { activeSection } = props;
-  console.log(activeSection, "activation props");
+  console.log(activeSection, currentRoute, "activation props");
   return (
     <div
       className={`fixed-top`}
@@ -22,7 +27,9 @@ function Navbar(props) {
             <ul className={`d-flex justify-content-evenly ${styles.navbar}`}>
               <li
                 className={`${styles.nav_item} ${
-                  activeSection === "home" ? styles.active : ""
+                  activeSection === "home" && currentRoute === "/"
+                    ? styles.active
+                    : ""
                 }`}
               >
                 <Link
@@ -34,7 +41,9 @@ function Navbar(props) {
               </li>
               <li
                 className={`${styles.nav_item}  ${
-                  activeSection === "services" ? styles.active : ""
+                  activeSection === "services" && currentRoute === "/"
+                    ? styles.active
+                    : ""
                 }`}
               >
                 <Link
@@ -46,7 +55,9 @@ function Navbar(props) {
               </li>
               <li
                 className={`${styles.nav_item}  ${
-                  activeSection === "contact_us" ? styles.active : ""
+                  activeSection === "contact_us" && currentRoute === "/"
+                    ? styles.active
+                    : ""
                 }`}
               >
                 <Link
@@ -58,7 +69,7 @@ function Navbar(props) {
               </li>
               <li
                 className={`${styles.nav_item}  ${
-                  activeSection === "about_us" ? styles.active : ""
+                  currentRoute === "/about_us" ? styles.active : ""
                 }`}
               >
                 <Link
@@ -70,7 +81,7 @@ function Navbar(props) {
               </li>
               <li
                 className={`${styles.nav_item}  ${
-                  activeSection === "carrers" ? styles.active : ""
+                  currentRoute === "/careers" ? styles.active : ""
                 }`}
               >
                 <Link

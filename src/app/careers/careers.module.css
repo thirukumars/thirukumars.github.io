@@ -12,3 +12,8 @@
     height: 300px;
     margin: 0 !important;
 }
+
+.para {
+    width: 60%;
+    margin: 0 auto;
+}
