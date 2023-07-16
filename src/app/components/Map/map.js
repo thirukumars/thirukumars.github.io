@@ -1,27 +1,45 @@
-import React from "react";
-import GoogleMapReact from "google-map-react";
+import { useEffect, useRef, useMemo } from "react";
+import { Loader } from "@googlemaps/js-api-loader";
+// function Map({ address }) {
+//   const mapRef = useRef(null);
+//   const geocoder = useMemo(() => new google.maps.Geocoder(), []);
+//   useEffect(() => {
+//     const loader = new Loader({
+//       apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+//       version: "weekly",
+//     });
+//     loader.importLibrary("maps").then((google) => {
+//       geocoder.geocode({ address: address }, (results, status) => {
+//         if (status === "OK") {
+//           const map = new google.maps.Map(mapRef.current, {
+//             center: results[0].geometry.location,
+//             zoom: 8,
+//           });
+//           const marker = new google.maps.Marker({
+//             map: map,
+//             position: results[0].geometry.location,
+//           });
+//         } else {
+//           console.error(
+//             `Geocode was not successful for the following reason: ${status}`
+//           );
+//         }
+//       });
+//     });
+//   }, [address, geocoder]);
+//   return <div style={{ height: "400px" }} ref={mapRef} />;
+// }
+// export default Map;
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+let loader;
+export const loadGoogleMaps = async (apiKey, version, libraries) => {
+  loader = new Loader({
+    apiKey: apiKey,
+    version: version,
+    libraries: libraries,
+  });
 
-export default function Map() {
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
-    },
-    zoom: 11,
-  };
+  await loader.load();
+};
 
-  return (
-    // Important! Always set the container height explicitly
-    <div style={{ height: "200px", width: "80%" }}>
-      <GoogleMapReact
-      // bootstrapURLKeys={{ key: "" }}
-      // defaultCenter={defaultProps.center}
-      // defaultZoom={defaultProps.zoom}
-      >
-        <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
-      </GoogleMapReact>
-    </div>
-  );
-}
+export default loader;

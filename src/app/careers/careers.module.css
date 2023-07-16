@@ -17,3 +17,7 @@
     width: 60%;
     margin: 0 auto;
 }
+
+.select_box span {
+    font-weight: 500;
+}

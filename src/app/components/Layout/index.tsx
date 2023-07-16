@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import styles from "./layout.module.css";
 
 function Layout({ children }: { children: any }) {
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("home");
   useEffect(() => {
     const handleScroll = () => {
       const bannerSection = document.getElementById("home");

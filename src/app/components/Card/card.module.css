@@ -1,0 +1,26 @@
+.card_wrapper {
+    border: 0.9px solid rgba(213, 213, 213, 1);
+    border-radius: 10px;
+    padding: 30px;
+}
+.salary .range {
+font-weight: 600;
+}
+
+
+.apply_btn {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 150px;
+    text-align: center;
+    color: white;
+    transition: transform 0.5s ease;
+    background: linear-gradient(
+      140deg,
+      #037ce5 0%,
+      #fc1340 48.3%,
+      #fd8246 72.9%,
+      #fabd00 100%
+    );
+  }

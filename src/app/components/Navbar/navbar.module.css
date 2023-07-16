@@ -4,7 +4,7 @@ font-weight: bold;
 }
 .logo_icon {
   /* height: 30px; */
-  width: 70%;
+  width: 30%;
 }
 
 .nav_item:hover {
@@ -30,13 +30,18 @@ nav ul li.active {
     min-width: 120px;
     display: flex;
     justify-content: center;
-    padding-left: 2rem;
+    /* padding-left: 2rem; */
   }
 
 
 
   @media (max-width: 520px) {
-    .nav_container {
-      display: none;
+    .logo_icon {
+      /* height: 30px; */
+      width: 50%;
     }
+   .nav_container {
+      padding: 30px;
+    }
+    
   }

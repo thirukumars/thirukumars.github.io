@@ -49,11 +49,14 @@ function Banner(props) {
         <div className="col-md-4">
           <h1>DISRUPTIVE INNOVATION</h1>
           <p>
-            We are a disruptive innovation powerhouse, revolutionizing
-            industries by introducing novel products and services that challenge
-            the status quo. Our mission is to create accessible and affordable
-            solutions that simplify complex processes and reshape markets for
-            the better..
+            At <b>Beyox</b>, we harness the power of disruptive innovation to
+            drive businesses forward while prioritizing data security and social
+            impact. Specializing in creating groundbreaking solutions, we
+            challenge the status quo and propel industries into the future. With
+            our expertise in cutting-edge technologies and forward-thinking
+            strategies, we empower businesses to embrace change while ensuring
+            the utmost protection of sensitive data and fostering positive
+            social change.
           </p>
         </div>
         <div className="col-md-8">

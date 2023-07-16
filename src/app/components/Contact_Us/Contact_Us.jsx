@@ -2,7 +2,27 @@ import Map from "../Map/map";
 import styles from "./contact_us.module.css";
 import { IoLocationSharp } from "react-icons/io5";
 import { GrMail } from "react-icons/gr";
+import { loadGoogleMaps } from "../Map/map";
+import { useEffect } from "react";
+
 function ContactUs(props) {
+  useEffect(() => {
+    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+    const version = "weekly";
+    const libraries = ["places"]; // Example: include the 'places' library
+
+    loadGoogleMaps(apiKey, version, libraries)
+      .then(() => {
+        console.log("succedss");
+        // Google Maps API loaded successfully
+        // You can now use the Google Maps API here
+        // For example, you can initialize the map or use other map-related functions
+      })
+      .catch((error) => {
+        // Error loading Google Maps API
+        console.log("Error loading Google Maps API:", error);
+      });
+  });
   return (
     <section className={`container mt-5 px-5`} id="contact_us">
       <h1 className="header  text-center">Contact Us</h1>
@@ -24,7 +44,11 @@ function ContactUs(props) {
               <span className="mx-3">sales@beyox.in</span>
             </p>
           </div>
-          <div className="map mt-5">{/* <Map /> */}</div>
+          <div className="map mt-5">
+            {" "}
+            {/* <Map address="1600 Amphitheatre Parkway, Mountain View, CA" /> */}
+            <div id="map"></div>
+          </div>
         </div>
         <div className="col-md-6 text-center">
           <input type="text" placeholder="name" />
